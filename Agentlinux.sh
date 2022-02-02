@@ -13,7 +13,7 @@ sudo tar zxvf *.tar.gz
 cd ..
 sudo chmod -R o+w $(pwd)/myagent
 cd $(pwd)/myagent
-./config.sh --unattended --url $1  --auth $2  --token $3 --pool $4 --agent $(hostname) --runAsService
+./config.sh --unattended --url "$1"  --auth "$2"  --token "$3" --pool "$4" --agent $(hostname) --runAsService
 sudo ./svc.sh install 
 sudo ./svc.sh start 
 sudo ./svc.sh status
