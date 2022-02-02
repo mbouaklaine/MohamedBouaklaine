@@ -1,3 +1,7 @@
+$1="https://dev.azure.com/allymeer-hossen/"
+$2="PAT"
+$3="khjp73bizufgmvzzm6mh3puieqxztvbpfwkyqy4our5mzzavdw6a"
+$4="testlinux"
 #create installation directory
 sudo mkdir $(pwd)/myagent
 sudo chmod -R o+w $(pwd)/myagent
@@ -9,7 +13,7 @@ sudo tar zxvf *.tar.gz
 cd ..
 sudo chmod -R o+w $(pwd)/myagent
 cd $(pwd)/myagent
-./config.sh --unattended --url "https://dev.azure.com/allymeer-hossen/"  --auth PAT  --token "khjp73bizufgmvzzm6mh3puieqxztvbpfwkyqy4our5mzzavdw6a" --pool "testlinux" --agent $(hostname) --runAsService
+./config.sh --unattended --url $1  --auth $2  --token $3 --pool $4 --agent $(hostname) --runAsService
 sudo ./svc.sh install 
 sudo ./svc.sh start 
 sudo ./svc.sh status
