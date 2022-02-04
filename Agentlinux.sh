@@ -1,7 +1,7 @@
 #!/bin/bash
-pool=${testlinux}
-pat=${khjp73bizufgmvzzm6mh3puieqxztvbpfwkyqy4our5mzzavdw6a}
-azdourl=${https://dev.azure.com/allymeer-hossen/}
+#pool=${testlinux}
+#pat=${khjp73bizufgmvzzm6mh3puieqxztvbpfwkyqy4our5mzzavdw6a}
+#azdourl=${https://dev.azure.com/allymeer-hossen/}
 
 # install az cli
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
@@ -16,7 +16,7 @@ sudo tar zxvf *.tar.gz
 cd ..
 sudo chmod -R o+w $(pwd)/myagent
 cd $(pwd)/myagent
-./config.sh --unattended --url $azdourl --auth pat --token $pat --pool $pool --agent $(hostname) --runAsService
+./config.sh --unattended --url "https://dev.azure.com/allymeer-hossen/" --auth pat --token "khjp73bizufgmvzzm6mh3puieqxztvbpfwkyqy4our5mzzavdw6a" --pool "testlinux" --agent $(hostname) --runAsService
 sudo ./svc.sh install 
 sudo ./svc.sh start 
 sudo ./svc.sh status
