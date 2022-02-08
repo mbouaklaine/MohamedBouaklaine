@@ -1,5 +1,4 @@
 #!/bin/bash
-#$agentuser=${azureuser}
 pool="testlinux"
 pat="srkne4chzomco2eejelnlsu66er55qpxiyftjb6odnlurvxj554a"
 azdourl="https://dev.azure.com/allymeer-hossen/"
