@@ -1,24 +1,28 @@
-#!/bin/bash
-pool="testlinux"
-pat="srkne4chzomco2eejelnlsu66er55qpxiyftjb6odnlurvxj554a"
-azdourl="https://dev.azure.com/allymeer-hossen/"
 
-# install az cli
-wget https://aka.ms/InstallAzureCLIDeb | sudo bash
+#!/bin/sh
 
-# download azdo agent
-sudo mkdir $(pwd)/myagent
-cd $(pwd)/myagent
-wget https://vstsagentpackage.azureedge.net/agent/2.196.2/vsts-agent-linux-x64-2.196.2.tar.gz  # Newer versions may be available at the time you're reading this
-tar xzvf *.tar.gz
+# Creates directory & download ADO agent install files
 
-# configure as azdouser
-cd ..
-sudo chmod -R o+w $(pwd)/myagent
-cd $(pwd)/myagent
-./config.sh --unattended --url $3 --auth pat --token $2 --pool $1 --agent $(hostname) --runAsService
+su - azureuser -c "
+mkdir myagent && cd myagent
+wget https://vstsagentpackage.azureedge.net/agent/2.186.1/vsts-agent-linux-x64-2.186.1.tar.gz
+tar zxvf vsts-agent-linux-x64-2.186.1.tar.gz"
 
-# install and start the service
-sudo ./svc.sh install 
-sudo ./svc.sh start 
-sudo ./svc.sh status
+# Unattended install
+
+su - azureuser -c "
+./config.sh --unattended \
+  --agent "${AZP_AGENT_NAME:-$(hostname)}" \
+  --url "https://dev.azure.com/allymeer-hossen/" \
+  --auth PAT \
+  --token "srkne4chzomco2eejelnlsu66er55qpxiyftjb6odnlurvxj554a" \
+  --pool "testlinux" \
+  --replace \
+  --acceptTeeEula & wait $!"
+
+cd /home/azureuser
+#Configure as a service
+sudo ./svc.sh install azureuser
+
+#Start svc
+sudo ./svc.sh start
