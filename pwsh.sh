@@ -23,12 +23,13 @@ sudo /myagent/svc.sh start
 #Install Azure CLI
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 ### update OS & Install PSHELL & Module AZ
-cd /home/azureuser
-sudo apt-get update
-sudo apt-get install -y wget apt-transport-https
-wget -q https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb
+wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
 sudo dpkg -i packages-microsoft-prod.deb
 sudo apt-get update
 sudo add-apt-repository universe
 sudo apt-get install -y powershell
-pwsh -c "Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force"
+sudo apt-get upgrade powershell
+pwsh
+Install-Module -Name Az -AllowClobber
+Import-Module Az
+exit
