@@ -8,7 +8,7 @@ sudo apt install git-all -y
 ##Install CLI on Linux###
 sudo apt-get update
 sudo apt-get install 
-curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+sudo curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 #Agentdevops
 #echo "$1" > /tmp/echofile
 #echo "$2" > /tmp/echofile2
