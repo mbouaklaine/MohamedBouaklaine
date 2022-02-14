@@ -5,9 +5,7 @@ sudo apt-get update
 sudo add-apt-repository universe
 sudo apt-get install -y powershell
 sudo apt-get upgrade powershell
-pwsh
-Install-Module -Name Az -AllowClobber
-Import-Module Az
+pwsh -c Install-Module -Name Az -AllowClobber
 exit
 
 #Terraform
