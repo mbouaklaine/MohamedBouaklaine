@@ -5,6 +5,8 @@ sudo mv terraform /usr/local/bin/
 #GIT
 sudo apt install git-all -y
 ##Install CLI on Linux###
+sudo apt-get update
+sudo apt-get install 
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 #Agentdevops
 #echo "$1" > /tmp/echofile
@@ -20,5 +22,5 @@ runuser -l azureuser -c "/myagent/config.sh --unattended  --url $1 --auth pat --
 sudo /myagent/svc.sh install
 sudo /myagent/svc.sh start
 #exit 0
-#Install Azure CLI
-curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+
+
