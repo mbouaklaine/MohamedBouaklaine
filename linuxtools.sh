@@ -44,6 +44,6 @@ sudo apt-get install -y powershell
 
 wget https://raw.githubusercontent.com/mbouaklaine/MohamedBouaklaine/main/Powershell.sh
 
-chmod 777 Powershell.sh
-./Powershell.sh
+sudo chmod 777 Powershell.sh
+runuser -l azureuser -c "sh Powershell.sh"
 exit
