@@ -1,1 +1,1 @@
-sudo pwsh -c "Install-Module -Name Az -AllowClobber -Force"
+wsh -c Install-Module -Name Az -Force
