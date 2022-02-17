@@ -1,6 +1,6 @@
 #Terraform
-sudo wget https://releases.hashicorp.com/terraform/1.1.5/terraform_1.1.5_linux_amd64.zip
-sudo apt install unzip && unzip terraform_1.1.5_linux_amd64.zip
+sudo wget https://releases.hashicorp.com/terraform/1.1.6/terraform_1.1.6_linux_arm64.zipp
+sudo apt install unzip && unzip terraform_1.1.6_linux_arm64.zip
 sudo mv terraform /usr/local/bin/terraform
 sudo chmod -R 777 /usr/local/bin/terraform
 #GIT
