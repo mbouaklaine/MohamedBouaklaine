@@ -40,11 +40,10 @@ sudo dpkg -i packages-microsoft-prod.deb
 sudo apt-get update
 sudo add-apt-repository universe
 sudo apt-get install -y powershell
+
 #### INSTALL AZ Module###
-sudo sleep 5m 
+
 wget https://raw.githubusercontent.com/mbouaklaine/MohamedBouaklaine/main/Powershell.sh
-
 sudo chmod 777 Powershell.sh 
-sudo sh Powershell.sh
+runuser -l azureuser -c "/home/azureuser/Powershell.sh"
 
-exit
