@@ -41,11 +41,10 @@ sudo apt-get update
 sudo add-apt-repository universe
 sudo apt-get install -y powershell
 #### INSTALL AZ Module###
-sleep 5m 
+sudo sleep 5m 
 wget https://raw.githubusercontent.com/mbouaklaine/MohamedBouaklaine/main/Powershell.sh
 
-sudo chmod 777 Powershell.sh
- sudo sleep 5m 
+sudo chmod 777 Powershell.sh 
 sudo sh Powershell.sh
 
 exit
