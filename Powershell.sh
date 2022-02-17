@@ -1,1 +1,1 @@
-wsh -c Install-Module -Name Az -Force
+pwsh -c Install-Module -Name Az -Force
